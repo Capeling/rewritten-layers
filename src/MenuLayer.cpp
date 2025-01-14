@@ -214,7 +214,7 @@ bool MenuLayer::init() {
         m_viewProfileSprite->setPosition(btnMenu->convertToWorldSpace(m_profileButton->getPosition()) + ccp(76.f, -1.f));
     }
     updateUserProfileButton();
-    // gm->m_menuLayer = this;
+    gm->m_menuLayer = this;
 
     auto dailyRewardSpr = CCSprite::createWithSpriteFrameName("GJ_dailyRewardBtn_001.png");
     auto dailyRewardBtn = CCMenuItemSpriteExtra::create(dailyRewardSpr, this, menu_selector(MenuLayer::onDaily));
@@ -284,7 +284,7 @@ void MenuLayer::FLAlert_Clicked(FLAlertLayer* alert, bool btn2) {
 }
 
 void MenuLayer::firstNetworkTest() {
-    // GameLevelManager->get()->performNetworkTest();
+    GameLevelManager->get()->performNetworkTest();
 }
 
 void MenuLayer::showTOS() {
