@@ -279,6 +279,15 @@ void MenuLayer::FLAlert_Clicked(FLAlertLayer* alert, bool btn2) {
 
                 break;
             }
+            case 1: {
+                GameManager::get()->setGameVariable("0034", true);
+            }
+            case 2: {
+                CCApplication::get()->sharedApplication()->openURL(CCString::createWithFormat("https://www.robtopgames.com/download/gj%i", 0)->getCString());
+            }
+            case 3: {
+                CCApplication::get()->sharedApplication()->openURL("https://www.newgrounds.com/audio");
+            }
         }
     }
 }
