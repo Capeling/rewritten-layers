@@ -2,9 +2,17 @@
 
 using namespace geode::prelude;
 
-CCScene* MenuLayer::scene() {
+CCScene* MenuLayer::scene(bool fromReload) {
     auto ret = CCScene::create();
-    ret->addChild(create());
+    auto me = create();
+    ret->addChild(me);
+    
+    if(fromReload) {
+        auto delay = CCDelayTime::create(0.f);
+        auto callfunc = CCCallFunc::create(me, callfunc_selector(MenuLayer::onOptionsInstant));
+        me->runAction(CCSequence::create(delay, callfunc, 0));
+    }
+
     return ret;
 }
 

@@ -8,7 +8,7 @@ public:
     ~MenuLayer();
 
     static MenuLayer* create();
-    static cocos2d::CCScene* scene();
+    static cocos2d::CCScene* scene(bool);
 
     bool init();
 
